@@ -1,12 +1,12 @@
 {
-  "name": "pharma_network",
+  "name": "pharma-net-app",
   "version": "1.0.0",
   "description": "NodeJS App Accessing the Pharma Chaincode on Fabric Network",
   "main": "index.js",
   "scripts": {
     "test": "rm -rf identity && node index.js"
   },
-  "author": "Anil D",
+  "author": "UG Group Assignmentcls",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
