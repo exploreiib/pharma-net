@@ -63,10 +63,10 @@ async function addDrug(req,res) {
  
  
         let nameOfOrg = req.body.nameOfOrg;
-        let drugName = req.body.companyCRN;
-        let serialNo = req.body.companyName;
-        let mfgDate = req.body.location;
-        let expDate = req.body.organisationRole;
+        let drugName = req.body.drugName;
+        let serialNo = req.body.serialNo;
+        let mfgDate = req.body.mfgDate;
+        let expDate = req.body.expDate;
         let companyCRN = req.body.companyCRN;
     
      
