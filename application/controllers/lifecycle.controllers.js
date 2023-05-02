@@ -50,8 +50,8 @@ async function viewCurrentState(req,res) {
  
  
         let nameOfOrg = req.body.nameOfOrg;
-        let drugName = req.body.companyCRN;
-        let serialNo = req.body.companyName;
+        let drugName = req.body.drugName;
+        let serialNo = req.body.serialNo;
      
       const pharmanetContract = await getContractInstance(nameOfOrg);
   
