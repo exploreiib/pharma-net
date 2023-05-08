@@ -89,7 +89,7 @@ class PharmanetContract extends Contract {
 
     // All participants other than consumer can register the company
     if ("consumerMSP" !== mspID) {
-      const companyID = ctx.stub.createCompositeKey(keys.companyNameSpace(), [companyCRN, companyName]);
+      const companyID = await ctx.stub.createCompositeKey(keys.companyNameSpace(), [companyCRN, companyName]);
 
       //Check for the role and assaign hierarchyKey accordingly
       if (
@@ -163,7 +163,7 @@ class PharmanetContract extends Contract {
     ]);
 
     
-    const productID = ctx.stub.createCompositeKey(keys.drugNameSpace(), [drugName, serialNo]);
+    const productID = await ctx.stub.createCompositeKey(keys.drugNameSpace(), [drugName, serialNo]);
 
     //create the drug object to store on the ledger
     let drugObject = {
@@ -256,7 +256,7 @@ class PharmanetContract extends Contract {
       //All Good, Create a purchase request
       console.log("All Good, Create a purchase request");
       // CRN number of the buyer and Drug Name, along with an appropriate namespace.
-      const poID = ctx.stub.createCompositeKey(keys.poNameSpace(), [buyerCRN, drugName]);
+      const poID = await ctx.stub.createCompositeKey(keys.poNameSpace(), [buyerCRN, drugName]);
 
       //create the drug object to store on the ledger
       let purchaseOrderObject = {
@@ -280,7 +280,7 @@ class PharmanetContract extends Contract {
       }  
       //Validations are Good, Create a purchase request
       console.log("All Good, Create a purchase request");
-      const poID = ctx.stub.createCompositeKey(keys.poNameSpace(), [buyerCRN, drugName]);
+      const poID = await ctx.stub.createCompositeKey(keys.poNameSpace(), [buyerCRN, drugName]);
 
       //create the drug object to store on the ledger
       let purchaseOrderObject = {
@@ -306,14 +306,17 @@ class PharmanetContract extends Contract {
    * @param ctx - The transaction Context object
    * @param buyerCRN - The Company Registration Number of Buyer
    * @param drugName - Contains the name of the drug for which the PO is raised
-   * @param listOfAssetsStr - String of comma seperated serial numbers of the drug  
+   * @param listOfAssets - String of comma seperated serial numbers of the drug  
    * @param transporterCRN - The Company Registration Number of Transporter
    * @returns either shipmentObject that's saved to the ledger or validation error message ,incase of validation errors   
    */
-  async createShipment(ctx, buyerCRN, drugName, listOfAssetsStr, transporterCRN) {
+  async createShipment(ctx, buyerCRN, drugName, listOfAssets, transporterCRN) {
    
-    var listOfAssets = JSON.parse(listOfAssetsStr);
-    var listOfAssetsLength = listOfAssets.length;
+    //var listOfAssets = JSON.parse(listOfAssetsStr);
+    //var listOfAssetsLength = listOfAssets.length;
+
+    let listFromCommandLine = listOfAssets.split(",");
+    let listOfAssetsLength = listFromCommandLine.length;
 
     //Get the PO associated with the buyerCRN
     let generatePOID = await ctx.stub.createCompositeKey(keys.poNameSpace(), [
@@ -322,7 +325,9 @@ class PharmanetContract extends Contract {
     ]);
     
     //Get the purchase order
-    var parsedPurchaseOrder = await readState(ctx,generatePOID);
+    //var parsedPurchaseOrder = await readState(ctx,generatePOID);
+    let buyerPurchaseBuffer = await ctx.stub.getState(generatePOID).catch((err) => console.log(err));
+    let parsedPurchaseOrder = JSON.parse(buyerPurchaseBuffer.toString());
 
     //Check Validation 1-listOfAssets should be exactly equal to the quantity speified in the PO
     if (!(listOfAssetsLength == parsedPurchaseOrder.quantity)){
@@ -345,11 +350,11 @@ class PharmanetContract extends Contract {
     //The IDs of the drug should be valid ID which are registered on the network.
     var validDrugId = true;
     var listOfCompositeKeysForDrugs = [];
-    for (let i = 0; i < listOfAssetsLength; i++) {
+    for (let i = 0; i < listFromCommandLine.length; i++) {
       if (validDrugId) {
         //Using the serialnumber and drugName get the details of the drug.
-        let serialnumberOfTheDrug = listOfAssets[i];
-        const productDrugID = ctx.stub.createCompositeKey(keys.drugNameSpace(), [
+        let serialnumberOfTheDrug = listFromCommandLine[i];
+        const productDrugID = await ctx.stub.createCompositeKey(keys.drugNameSpace(), [
               drugName,
               serialnumberOfTheDrug,
         ]);
@@ -367,7 +372,7 @@ class PharmanetContract extends Contract {
       if(!validDrugId)
         throw new Error("Sorry the drug is not registered with the network");
 
-      const shipmentID = ctx.stub.createCompositeKey(keys.shipmentNameSpace(), [
+      const shipmentID = await ctx.stub.createCompositeKey(keys.shipmentNameSpace(), [
                                                       buyerCRN,
                                                       drugName,
                                                     ]);
@@ -541,7 +546,7 @@ class PharmanetContract extends Contract {
   async retailDrug(ctx, drugName, serialNo, retailerCRN, customerAadhar) {
     //Validation1 - Should be invoked only by retailer, who is the owner of the drug
     //check retailerCRN is equal to the owner of the drug in drug object
-    const drugCompositeKeyForSearch = ctx.stub.createCompositeKey(keys.drugNameSpace(), [
+    const drugCompositeKeyForSearch = await ctx.stub.createCompositeKey(keys.drugNameSpace(), [
       drugName,
       serialNo,
     ]);
@@ -596,7 +601,7 @@ class PharmanetContract extends Contract {
    * @returns result - Transaction history of the drug   
    */
   async viewHistory(ctx, drugName, serialNo) {
-    const productID = ctx.stub.createCompositeKey(keys.drugNameSpace(), [drugName, serialNo]);
+    const productID = await ctx.stub.createCompositeKey(keys.drugNameSpace(), [drugName, serialNo]);
 
     let iterator = await ctx.stub.getHistoryForKey(productID);
     let result = [];
@@ -620,7 +625,7 @@ class PharmanetContract extends Contract {
    * @returns drugRecord - current state of the drug  
    */
   async viewDrugCurrentState(ctx, drugName, serialNo) {
-    const productID = ctx.stub.createCompositeKey(keys.drugNameSpace(), [drugName, serialNo]);
+    const productID = await ctx.stub.createCompositeKey(keys.drugNameSpace(), [drugName, serialNo]);
     let drugRecord = await readState(ctx,productID);
     return drugRecord;
   }
