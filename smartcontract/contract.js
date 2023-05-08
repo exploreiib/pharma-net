@@ -319,12 +319,13 @@ class PharmanetContract extends Contract {
     let listOfAssetsLength = listFromCommandLine.length;
 
     //Get the PO associated with the buyerCRN
-    let generatePOID = await ctx.stub.createCompositeKey(keys.poNameSpace(), [buyerCRN, drugName]);
+    const poID = await ctx.stub.createCompositeKey(keys.poNameSpace(), [buyerCRN, drugName]);
+
     
     //Get the purchase order
-    //var parsedPurchaseOrder = await readState(ctx,generatePOID);
-    let buyerPurchaseBuffer = await ctx.stub.getState(generatePOID).catch((err) => console.log(err));
-    let parsedPurchaseOrder = JSON.parse(buyerPurchaseBuffer.toString());
+    var parsedPurchaseOrder = await readState(ctx,poID);
+    //let buyerPurchaseBuffer = await ctx.stub.getState(generatePOID).catch((err) => console.log(err));
+    //let parsedPurchaseOrder = JSON.parse(buyerPurchaseBuffer.toString());
 
     //Check Validation 1-listOfAssets should be exactly equal to the quantity speified in the PO
     if (!(listOfAssetsLength == parsedPurchaseOrder.quantity)){
@@ -351,15 +352,15 @@ class PharmanetContract extends Contract {
       if (validDrugId) {
         //Using the serialnumber and drugName get the details of the drug.
         let serialnumberOfTheDrug = listFromCommandLine[i];
-        const productDrugID = await ctx.stub.createCompositeKey(keys.drugNameSpace(), [
+        const productID = await ctx.stub.createCompositeKey(keys.drugNameSpace(), [
               drugName,
-              serialnumberOfTheDrug,
+              serialnumberOfTheDrug
         ]);
 
         try {
-              await readState(ctx,productDrugID);
+              await readState(ctx,productID);
               validDrugId = true;
-              listOfCompositeKeysForDrugs.push(productDrugID);
+              listOfCompositeKeysForDrugs.push(productID);
           } catch (err) {
               validDrugId = false;
             }
@@ -371,7 +372,7 @@ class PharmanetContract extends Contract {
 
       const shipmentID = await ctx.stub.createCompositeKey(keys.shipmentNameSpace(), [
                                                       buyerCRN,
-                                                      drugName,
+                                                      drugName
                                                     ]);
 
       //Transporter compositeKey
