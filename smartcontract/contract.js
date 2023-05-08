@@ -312,17 +312,17 @@ class PharmanetContract extends Contract {
    */
   async createShipment(ctx, buyerCRN, drugName, listOfAssetsStr, transporterCRN) {
    
-    let listOfAssets = JSON.parse(listOfAssetsStr);
-    let listOfAssetsLength = listOfAssets.length;
+    var listOfAssets = JSON.parse(listOfAssetsStr);
+    var listOfAssetsLength = listOfAssets.length;
 
     //Get the PO associated with the buyerCRN
     let generatePOID = await ctx.stub.createCompositeKey(keys.poNameSpace(), [
       buyerCRN,
       drugName,
     ]);
-
+    
     //Get the purchase order
-    let parsedPurchaseOrder = await readState(ctx,generatePOID);
+    var parsedPurchaseOrder = await readState(ctx,generatePOID);
 
     //Check Validation 1-listOfAssets should be exactly equal to the quantity speified in the PO
     if (!(listOfAssetsLength == parsedPurchaseOrder.quantity)){

@@ -1,13 +1,13 @@
 
-function companyNameSpace(phone){
+function companyNameSpace(){
     return "org.drug-counterfeit.pharmanet.company";
 }
 
-function drugNameSpace(testId){
+function drugNameSpace(){
     return "org.drug-counterfeit.pharmanet.drug";
 }
 
-function poNameSpace(phone){
+function poNameSpace(){
     return "org.drug-counterfeit.pharmanet.purchaseOrder";
 }
 
