@@ -72,9 +72,11 @@ async function createShipment(req,res) {
   
       // register new drug
       console.log(".....Creating a Shipment");
+      console.log(".....listOfAssets length \n\n"+ listOfAssets.length);
 
       let listOfAssetsStr = JSON.stringify(listOfAssets);
       console.log(".....listOfAssetsStr \n\n"+ listOfAssetsStr);
+      console.log(".....listOfAssetsStr length \n\n"+ listOfAssetsStr.length);
 
       const shipmentBuffer = await pharmanetContract.submitTransaction(
         "createShipment",

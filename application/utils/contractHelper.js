@@ -46,7 +46,7 @@ async function getContractInstance(nameOfOrg) {
   // Get instance of deployed Certnet contract
   // @param Name of chaincode
   // @param Name of smart contract
-  console.log(".....Connecting to Certnet Smart Contract");
+  console.log(".....Connecting to pharmanet Smart Contract");
   return channel.getContract("pharmanet", "org.drug-counterfeit.pharmanet");
 }
 

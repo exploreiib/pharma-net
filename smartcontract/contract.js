@@ -315,14 +315,11 @@ class PharmanetContract extends Contract {
     //var listOfAssets = JSON.parse(listOfAssetsStr);
     //var listOfAssetsLength = listOfAssets.length;
 
-    let listFromCommandLine = listOfAssets.split(",");
+    let listFromCommandLine = JSON.parse(listOfAssets);//listOfAssets.split(",");
     let listOfAssetsLength = listFromCommandLine.length;
 
     //Get the PO associated with the buyerCRN
-    let generatePOID = await ctx.stub.createCompositeKey(keys.poNameSpace(), [
-      buyerCRN,
-      drugName,
-    ]);
+    let generatePOID = await ctx.stub.createCompositeKey(keys.poNameSpace(), [buyerCRN, drugName]);
     
     //Get the purchase order
     //var parsedPurchaseOrder = await readState(ctx,generatePOID);
