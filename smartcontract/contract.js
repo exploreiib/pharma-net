@@ -306,12 +306,13 @@ class PharmanetContract extends Contract {
    * @param ctx - The transaction Context object
    * @param buyerCRN - The Company Registration Number of Buyer
    * @param drugName - Contains the name of the drug for which the PO is raised
-   * @param listOfAssets - List of serial numbers of the drug  
+   * @param listOfAssetsStr - String of comma seperated serial numbers of the drug  
    * @param transporterCRN - The Company Registration Number of Transporter
    * @returns either shipmentObject that's saved to the ledger or validation error message ,incase of validation errors   
    */
-  async createShipment(ctx, buyerCRN, drugName, listOfAssets, transporterCRN) {
-
+  async createShipment(ctx, buyerCRN, drugName, listOfAssetsStr, transporterCRN) {
+   
+    let listOfAssets = listOfAssetsStr.split(",");
     let listOfAssetsLength = listOfAssets.length;
 
     //Get the PO associated with the buyerCRN
