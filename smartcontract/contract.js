@@ -352,10 +352,7 @@ class PharmanetContract extends Contract {
       if (validDrugId) {
         //Using the serialnumber and drugName get the details of the drug.
         let serialnumberOfTheDrug = listFromCommandLine[i];
-        const productID = await ctx.stub.createCompositeKey(keys.drugNameSpace(), [
-              drugName,
-              serialnumberOfTheDrug
-        ]);
+        let productID = await ctx.stub.createCompositeKey(keys.drugNameSpace(), [drugName,serialnumberOfTheDrug]);
 
         try {
               await readState(ctx,productID);
@@ -379,7 +376,7 @@ class PharmanetContract extends Contract {
       let transporterAttributes = await retrieveAllCompositeKeyAttributes(ctx,
         keys.companyNameSpace(),
         "transporterCRN",
-        transporterCRN,
+        transporterCRN
       );
   
   
