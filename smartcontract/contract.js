@@ -409,7 +409,7 @@ class PharmanetContract extends Contract {
       //Owner of each batch should be updated
       for (let i = 0; i <= listOfCompositeKeysForDrugs.length - 1; i++) {
         //Find the drug details using composite key
-        let jsonDrugDetail = await readState(listOfCompositeKeysForDrugs[i]);
+        let jsonDrugDetail = await readState(ctx,listOfCompositeKeysForDrugs[i]);
         console.log("jsonDrugDetail owner=> " + jsonDrugDetail.owner);
         console.log("jsonDrugDetail manufacturer=> " + jsonDrugDetail.manufacturer);
         //Owner is now transporter, so transporter composite key is the owner
