@@ -525,7 +525,7 @@ class PharmanetContract extends Contract {
       await writeState(ctx,drugCompositeKeyID, JSONDrugDetailsForUpdation);
   }
   
-  return JSON.parse(parsedShipmentData.toString());
+  return parsedShipmentData;
 }
 
   /**
