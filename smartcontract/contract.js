@@ -415,7 +415,7 @@ class PharmanetContract extends Contract {
         //Owner is now transporter, so transporter composite key is the owner
         jsonDrugDetail.owner = generateTransporterCompanyID;
         //Once you have updated the owner of the drug put the state back to the drug
-        await writeState(listOfCompositeKeysForDrugs[i], jsonDrugDetail);
+        await writeState(ctx,listOfCompositeKeysForDrugs[i], jsonDrugDetail);
       }
 
       return shipmentObject;
