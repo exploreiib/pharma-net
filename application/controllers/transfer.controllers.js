@@ -95,7 +95,7 @@ async function createShipment(req,res) {
       const result = {
         status: "success",
         message: "New Shipment got registered",
-        newShipment: newShipment,
+        shipment: newShipment,
       };
       return res.json(result);
   
@@ -140,8 +140,8 @@ async function createShipment(req,res) {
   
       const result = {
         status: "success",
-        message: "New Updated Shipment got registered",
-        newUpdatedShipment: newUpdatedShipment,
+        message: "Shipment got updated",
+        shipment: newUpdatedShipment,
       };
       return res.json(result);
   

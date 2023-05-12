@@ -405,7 +405,7 @@ class PharmanetContract extends Contract {
       };
 
       await writeState(ctx,shipmentID, shipmentObject);
-
+      let shipmentResponseObject = [];
       //Owner of each batch should be updated
       for (let i = 0; i <= listOfCompositeKeysForDrugs.length - 1; i++) {
         //Find the drug details using composite key
@@ -416,9 +416,10 @@ class PharmanetContract extends Contract {
         jsonDrugDetail.owner = generateTransporterCompanyID;
         //Once you have updated the owner of the drug put the state back to the drug
         await writeState(ctx,listOfCompositeKeysForDrugs[i], jsonDrugDetail);
+        shipmentResponseObject.push(jsonDrugDetail);
       }
 
-      return shipmentObject;
+      return shipmentResponseObject;
       
   }
 
@@ -499,7 +500,7 @@ class PharmanetContract extends Contract {
     );
 
     console.log("Buyer composite key created=> " + generateBuyerCompanyIDForOwner);
-   
+    let shimentObject = [];
     //Iterate through the drug list in the shipment and
     let drugsInShipment = parsedShipmentData.assets;
     for (let i = 0; i <= drugsInShipment.length - 1; i++) {
@@ -512,7 +513,7 @@ class PharmanetContract extends Contract {
 
       //change the owner of the drug - buyerCRN
       console.log("drugCompositeKeyID is=> " + drugCompositeKeyID);
-      let JSONDrugDetailsForUpdation = readState(ctx,drugCompositeKeyID);
+      let JSONDrugDetailsForUpdation = await readState(ctx,drugCompositeKeyID);
 
       console.log("The shipment field for " + drugCompositeKeyID + " is " + JSONDrugDetailsForUpdation.shipment);
       console.log("The owner field for " + drugCompositeKeyID + " is " + JSONDrugDetailsForUpdation.owner);
@@ -523,9 +524,10 @@ class PharmanetContract extends Contract {
 
       //Once you have updated the owner of the drug put the state back to the drug
       await writeState(ctx,drugCompositeKeyID, JSONDrugDetailsForUpdation);
+      shimentObject.push(JSONDrugDetailsForUpdation);
   }
   
-  return parsedShipmentData;
+  return shimentObject;
 }
 
   /**
