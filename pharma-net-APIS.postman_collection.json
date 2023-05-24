@@ -1,0 +1,713 @@
+{
+	"info": {
+		"_postman_id": "dad9848d-5247-4358-8374-4fcd0323a0be",
+		"name": "pharma-net-APIS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addToWalletManufacturer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"certificatePath\":\"/home/pharmanet/project_assigment/pharma-net/network/crypto-config/peerOrganizations/manufacturer.pharma-supply-network.com/users/Admin@manufacturer.pharma-supply-network.com/msp/signcerts/Admin@manufacturer.pharma-supply-network.com-cert.pem\",\r\n    \"privateKeyPath\":\"/home/pharmanet/project_assigment/pharma-net/network/crypto-config/peerOrganizations/manufacturer.pharma-supply-network.com/users/Admin@manufacturer.pharma-supply-network.com/msp/keystore/5936b5602a34b0799ed57dab1ed0cbafa8a98b2f615b078843088713b7a45f89_sk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/identity/addToWalletManufacturer",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"identity",
+						"addToWalletManufacturer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addToWalletDistributor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"certificatePath\":\"/home/pharmanet/project_assigment/pharma-net/network/crypto-config/peerOrganizations/distributor.pharma-supply-network.com/users/Admin@distributor.pharma-supply-network.com/msp/signcerts/Admin@distributor.pharma-supply-network.com-cert.pem\",\r\n    \"privateKeyPath\":\"/home/pharmanet/project_assigment/pharma-net/network/crypto-config/peerOrganizations/distributor.pharma-supply-network.com/users/Admin@distributor.pharma-supply-network.com/msp/keystore/22131904b5148aba5d9894d9431b3385faecd5263c44f57960d74b0a96b24795_sk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/identity/addToWalletDistributor",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"identity",
+						"addToWalletDistributor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addToWalletTransporter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"certificatePath\":\"/home/pharmanet/project_assigment/pharma-net/network/crypto-config/peerOrganizations/transporter.pharma-supply-network.com/users/Admin@transporter.pharma-supply-network.com/msp/signcerts/Admin@transporter.pharma-supply-network.com-cert.pem\",\r\n    \"privateKeyPath\":\"/home/pharmanet/project_assigment/pharma-net/network/crypto-config/peerOrganizations/transporter.pharma-supply-network.com/users/Admin@transporter.pharma-supply-network.com/msp/keystore/61bcf4dafa89869d5ddd364f2092f48760b685a67b7749aa3288dc353c7a01be_sk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/identity/addToWalletTransporter",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"identity",
+						"addToWalletTransporter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addToWalletRetailer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"certificatePath\":\"/home/pharmanet/project_assigment/pharma-net/network/crypto-config/peerOrganizations/retailer.pharma-supply-network.com/users/Admin@retailer.pharma-supply-network.com/msp/signcerts/Admin@retailer.pharma-supply-network.com-cert.pem\",\r\n    \"privateKeyPath\":\"/home/pharmanet/project_assigment/pharma-net/network/crypto-config/peerOrganizations/retailer.pharma-supply-network.com/users/Admin@retailer.pharma-supply-network.com/msp/keystore/298e795cd0ef6ae3512d1c15ba4c5d1636c9d97dd2d2e5427e2ebbfa5620d32d_sk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/identity/addToWalletRetailer",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"identity",
+						"addToWalletRetailer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addToWalletConsumer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"certificatePath\":\"/home/pharmanet/project_assigment/pharma-net/network/crypto-config/peerOrganizations/consumer.pharma-supply-network.com/users/Admin@consumer.pharma-supply-network.com/msp/signcerts/Admin@consumer.pharma-supply-network.com-cert.pem\",\r\n    \"privateKeyPath\":\"/home/pharmanet/project_assigment/pharma-net/network/crypto-config/peerOrganizations/consumer.pharma-supply-network.com/users/Admin@consumer.pharma-supply-network.com/msp/keystore/78b58d9746bb11d16a71eddb01dc630127eab898c993fe07fa5f008514989e1f_sk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/identity/addToWalletConsumer",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"identity",
+						"addToWalletConsumer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registerCompany_manufacturer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"manufacturer\",\r\n    \"companyCRN\": \"MAN0001\",\r\n    \"companyName\": \"Cipla\",\r\n    \"location\": \"Mumbai\",\r\n    \"organisationRole\": \"Manufacturer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/register/registerCompany",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"register",
+						"registerCompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registerCompany_distributor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"distributor\",\r\n    \"companyCRN\": \"DST0001\",\r\n    \"companyName\": \"VG Pharma\",\r\n    \"location\": \"Hyderabad\",\r\n    \"organisationRole\": \"Distributor\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/register/registerCompany",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"register",
+						"registerCompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registerCompany_retailer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"retailer\",\r\n    \"companyCRN\": \"RET0001\",\r\n    \"companyName\": \"Retailer Gold\",\r\n    \"location\": \"Hyderabad\",\r\n    \"organisationRole\": \"Retailer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/register/registerCompany",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"register",
+						"registerCompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registerCompany_transporter1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"transporter\",\r\n    \"companyCRN\": \"TRA0001\",\r\n    \"companyName\": \" Bluedart\",\r\n    \"location\": \"Delhi\",\r\n    \"organisationRole\": \"Transporter\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/register/registerCompany",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"register",
+						"registerCompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "registerCompany_transporter2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"transporter\",\r\n    \"companyCRN\": \"TRA0002\",\r\n    \"companyName\": \" Fedex\",\r\n    \"location\": \"Hyderabad\",\r\n    \"organisationRole\": \"Transporter\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/register/registerCompany",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"register",
+						"registerCompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addDrug_1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"manufacturer\",\r\n    \"companyCRN\": \"MAN0001\",\r\n    \"drugName\": \"DOLO650\",\r\n    \"serialNo\": \"001\",\r\n    \"mfgDate\": \"MAY2023\",\r\n    \"expDate\": \"MAY2025\",\r\n\r\n    \"organisationRole\": \"Manufacturer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/register/addDrug",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"register",
+						"addDrug"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addDrug_2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"manufacturer\",\r\n    \"companyCRN\": \"MAN0001\",\r\n    \"drugName\": \"DOLO650\",\r\n    \"serialNo\": \"002\",\r\n    \"mfgDate\": \"MAY2023\",\r\n    \"expDate\": \"MAY2025\",\r\n\r\n    \"organisationRole\": \"Manufacturer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/register/addDrug",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"register",
+						"addDrug"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addDrug_3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"manufacturer\",\r\n    \"companyCRN\": \"MAN0001\",\r\n    \"drugName\": \"DOLO650\",\r\n    \"serialNo\": \"003\",\r\n    \"mfgDate\": \"MAY2023\",\r\n    \"expDate\": \"MAY2025\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/register/addDrug",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"register",
+						"addDrug"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createPO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"distributor\",\r\n    \"buyerCRN\": \"DST0001\",\r\n    \"sellerCRN\": \"MAN0001\",\r\n    \"drugName\": \"DOLO650\",\r\n    \"quantity\": \"003\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/transfer/createPO",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"transfer",
+						"createPO"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createShipment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"distributor\",\r\n    \"buyerCRN\": \"DST0001\",\r\n    \"listOfAssets\": [\"001\",\"002\",\"003\"],\r\n    \"drugName\": \"DOLO650\",\r\n    \"quantity\": \"003\",\r\n    \"transporterCRN\":\"TRA0002\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/transfer/createShipment",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"transfer",
+						"createShipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateShipment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"transporter\",\r\n    \"buyerCRN\": \"DST0001\",\r\n    \"drugName\": \"DOLO650\",\r\n    \"transporterCRN\":\"TRA0002\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/transfer/updateShipment",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"transfer",
+						"updateShipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createPOByRetailer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"retailer\",\r\n    \"buyerCRN\": \"RET0001\",\r\n    \"sellerCRN\": \"DST0001\",\r\n    \"drugName\": \"DOLO650\",\r\n    \"quantity\": \"002\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/transfer/createPO",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"transfer",
+						"createPO"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createShipmentByDistributor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"distributor\",\r\n    \"buyerCRN\": \"RET0001\",\r\n    \"listOfAssets\": [\"001\",\"002\"],\r\n    \"drugName\": \"DOLO650\",\r\n    \"quantity\": \"002\",\r\n    \"transporterCRN\":\"TRA0001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/transfer/createShipment",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"transfer",
+						"createShipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateShipmentByTransporter",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"transporter\",\r\n    \"buyerCRN\": \"RET0001\",\r\n    \"drugName\": \"DOLO650\",\r\n    \"transporterCRN\":\"TRA0002\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/transfer/updateShipment",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"transfer",
+						"updateShipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "retailDrug",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"retailer\",\r\n    \"retailerCRN\": \"RET0001\",\r\n    \"drugName\": \"DOLO650\",\r\n    \"serialNo\": \"001\",\r\n    \"customerAadhar\":\"ADHAR0001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/transfer/retailDrug",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"transfer",
+						"retailDrug"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "viewCurrentState",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"manufacturer\",\r\n      \"drugName\": \"DOLO650\",\r\n    \"serialNo\": \"003\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/view/viewCurrentState",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"view",
+						"viewCurrentState"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "viewHistory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameOfOrg\": \"manufacturer\",\r\n      \"drugName\": \"DOLO650\",\r\n    \"serialNo\": \"003\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://34.30.46.101:3000/view/viewHistory",
+					"protocol": "http",
+					"host": [
+						"34",
+						"30",
+						"46",
+						"101"
+					],
+					"port": "3000",
+					"path": [
+						"view",
+						"viewHistory"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
